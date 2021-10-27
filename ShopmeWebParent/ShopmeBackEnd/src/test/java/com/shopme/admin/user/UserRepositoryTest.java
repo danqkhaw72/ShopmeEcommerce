@@ -54,4 +54,12 @@ public class UserRepositoryTest {
 		Iterable<User> listUsers = repo.findAll();
 		listUsers.forEach(user -> System.out.println(user));
 	}
+	
+	@Test
+	public void testGetUserByEmail() {
+		String email = "kamu72@gmail.com";
+		User user = repo.getUserByEmail(email);
+		
+		assertThat(user).isNotNull();
+	}
 }
